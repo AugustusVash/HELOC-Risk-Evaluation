@@ -2,8 +2,24 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pickle
-# from joblib import load
+import subprocess
+import sys
+
+def install_and_import(package):
+    try:
+        __import__(package)
+        print(f"{package} is already installed.")
+    except ImportError:
+        print(f"{package} not found, installing now...")
+        subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+        __import__(package)
+        print(f"{package} has been successfully installed.")
+
+install_and_import('joblib')
+install_and_import('matplotlib')
+from joblib import load
 import matplotlib.pyplot as plt
+
 
 st.title('Credit Risk Assessment Tool')
 
