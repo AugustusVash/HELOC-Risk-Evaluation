@@ -1,0 +1,6 @@
+streamlit
+pandas
+numpy
+pickle
+joblib
+matplotlib
