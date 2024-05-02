@@ -2,34 +2,8 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pickle
-
-import subprocess
-import sys
-
-def install_packages(packages):
-    for package in packages:
-        try:
-            __import__(package)
-            print(f"{package} is already installed.")
-        except ImportError:
-            print(f"{package} not found, installing now...")
-            try:
-                subprocess.check_call([sys.executable, "-m", "pip", "install", package])
-                __import__(package)
-                print(f"{package} has been successfully installed.")
-            except subprocess.CalledProcessError as e:
-                print(f"Failed to install {package}. Error: {e}")
-
-# List of packages to install
-packages_to_install = ['joblib', 'matplotlib']
-
-# Installing the packages
-install_packages(packages_to_install)
-
-
 from joblib import load
 import matplotlib.pyplot as plt
-
 
 st.title('Credit Risk Assessment Tool')
 
@@ -39,18 +13,9 @@ df_pm = pd.read_csv("model_performance_metrics.csv")
 df_pm.set_index('Models', inplace=True)
 
 # Load the models
-# best_RF_model = load("best_RF_model.joblib")
-# best_Boosting_model = load("best_Boosting_model.joblib")
-# best_LDA_model = load("best_LDA_model.joblib")
-
-with open('best_RF_model.joblib', 'rb') as f:
-    best_RF_model = pickle.load(f)
-    
-with open('best_Boosting_model.joblib', 'rb') as f:
-    best_Boosting_model = pickle.load(f)
-    
-with open('best_LDA_model.joblib', 'rb') as f:
-    best_LDA_model = pickle.load(f)
+best_RF_model = load("best_RF_model.joblib")
+best_Boosting_model = load("best_Boosting_model.joblib")
+best_LDA_model = load("best_LDA_model.joblib")
 
 models = {
     'AdaBoost': best_Boosting_model,
