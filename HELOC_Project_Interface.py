@@ -2,23 +2,31 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pickle
-import importlib
+
 import subprocess
 import sys
 
-def install_and_import(package):
-    try:
-        importlib.import_module(package)
-        print(f"{package} is already installed.")
-    except ImportError:
-        print(f"{package} not found, installing...")
-        subprocess.check_call([sys.executable, "-m", "pip", "install", package])
-        print(f"{package} has been installed.")
-        # After installation, we import the module again
-        importlib.import_module(package)
+def install_packages(packages):
+    for package in packages:
+        try:
+            __import__(package)
+            print(f"{package} is already installed.")
+        except ImportError:
+            print(f"{package} not found, installing now...")
+            try:
+                subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+                __import__(package)
+                print(f"{package} has been successfully installed.")
+            except subprocess.CalledProcessError as e:
+                print(f"Failed to install {package}. Error: {e}")
 
-install_and_import('joblib')
-install_and_import('matplotlib')
+# List of packages to install
+packages_to_install = ['joblib', 'matplotlib']
+
+# Installing the packages
+install_packages(packages_to_install)
+
+
 from joblib import load
 import matplotlib.pyplot as plt
 
