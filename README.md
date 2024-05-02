@@ -9,3 +9,9 @@ This project develops a predictive model and decision support system (DSS) that 
 * **Interactive Interface**: A prototype of an interactive interface designed for end-users, enabling clear visualization and easy understanding of predictive outcomes.
 * **Explanation of Predictions**: Tools and methodologies integrated into the interface to explain the basis of predictions, making it transparent and understandable for users.
 
+## Access the Application
+To explore the interactive interface and see our decision support system in action, visit the live application here:
+
+[HELOC Risk Evaluation Project](https://heloc-risk-evaluation-project.streamlit.app/)
+
+This link provides direct access to our web-based application developed using Streamlit, allowing you to interact with the predictive models and understand the decision-making process in real-time.
