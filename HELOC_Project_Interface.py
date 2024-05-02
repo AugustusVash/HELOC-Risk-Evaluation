@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pickle
-from joblib import load
+# from joblib import load
 import matplotlib.pyplot as plt
 
 st.title('Credit Risk Assessment Tool')
