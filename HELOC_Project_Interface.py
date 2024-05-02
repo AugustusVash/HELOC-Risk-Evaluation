@@ -13,9 +13,18 @@ df_pm = pd.read_csv("model_performance_metrics.csv")
 df_pm.set_index('Models', inplace=True)
 
 # Load the models
-best_RF_model = load("best_RF_model.joblib")
-best_Boosting_model = load("best_Boosting_model.joblib")
-best_LDA_model = load("best_LDA_model.joblib")
+# best_RF_model = load("best_RF_model.joblib")
+# best_Boosting_model = load("best_Boosting_model.joblib")
+# best_LDA_model = load("best_LDA_model.joblib")
+
+with open('best_RF_model.joblib', 'rb') as f:
+    best_RF_model = pickle.load(f)
+    
+with open('best_Boosting_model.joblib', 'rb') as f:
+    best_Boosting_model = pickle.load(f)
+    
+with open('best_LDA_model.joblib', 'rb') as f:
+    best_LDA_model = pickle.load(f)
 
 models = {
     'AdaBoost': best_Boosting_model,
