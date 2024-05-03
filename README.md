@@ -10,7 +10,7 @@ This project develops a predictive model and decision support system (DSS) that 
 * **Explanation of Predictions**: Tools and methodologies integrated into the interface to explain the basis of predictions, making it transparent and understandable for users.
 
 ## Access the Application
-To explore the interactive interface and see our decision support system in action, visit the live application here:
+To explore the interactive interface and see the decision support system in action, visit the live application here:
 
 [HELOC Risk Evaluation Project](https://heloc-risk-evaluation-project.streamlit.app/)
 
