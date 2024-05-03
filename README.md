@@ -14,4 +14,4 @@ To explore the interactive interface and see our decision support system in acti
 
 [HELOC Risk Evaluation Project](https://heloc-risk-evaluation-project.streamlit.app/)
 
-This link provides direct access to our web-based application developed using Streamlit, allowing you to interact with the predictive models and understand the decision-making process in real-time.
+This link provides direct access to my web-based application developed using Streamlit, allowing you to interact with the predictive models and understand the decision-making process in real-time.
